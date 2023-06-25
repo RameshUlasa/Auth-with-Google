@@ -1,13 +1,37 @@
 import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
-import Cookies from 'js-cookie'
+
 import {FcGoogle} from 'react-icons/fc'
 import {AiFillApple} from 'react-icons/ai'
 
 import './index.css'
 
 class LoginForm extends Component {
+  state = {
+    redirectToDashboard: false,
+    username: '',
+    password: '',
+  }
+
+  onChangePassword = event => {
+    this.setState({password: event.target.value})
+  }
+
+  onChangeUsername = event => {
+    this.setState({username: event.target.value})
+  }
+
+  handleSubmit = event => {
+    event.preventDefault()
+    this.setState({redirectToDashboard: true})
+  }
+
   render() {
+    const {redirectToDashboard} = this.state
+
+    if (redirectToDashboard) {
+      return <Redirect to="/dashboard" />
+    }
     return (
       <div className="login-form-container">
         <div className="logo-container">
@@ -30,11 +54,12 @@ class LoginForm extends Component {
                 Sign in with Apple
               </button>
             </div>
-            <form className="form-card">
+            <form className="form-card" onSubmit={this.handleSubmit}>
               <label className="input-label" htmlFor="mail">
                 Email address
               </label>
               <input
+                onChange={this.onChangeUsername}
                 className="input"
                 id="mail"
                 type="email"
@@ -44,6 +69,7 @@ class LoginForm extends Component {
                 Password
               </label>
               <input
+                onChange={this.onChangePassword}
                 className="input"
                 id="password"
                 type="password"
@@ -55,7 +81,7 @@ class LoginForm extends Component {
               </button>
             </form>
             <p className="dont-have-acc">
-              Don't have an account?{' '}
+              Don't have an account?
               <span className="register">Register here</span>
             </p>
           </div>
