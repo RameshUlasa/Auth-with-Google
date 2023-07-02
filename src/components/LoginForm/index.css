@@ -84,7 +84,7 @@
   width: 45%;
   background-color: #ffffff;
   border: 0;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 6px 10px 6px 10px;
 }
 .google-apple-icon {
@@ -110,7 +110,7 @@
   background-color: #e8e8eb;
   padding: 8px 16px;
   border: none;
-  margin-bottom: 14px;
+
   margin-top: 3px;
   border-radius: 6px;
   outline: none;
@@ -141,4 +141,12 @@
 .register {
   color: #275af2;
   cursor: pointer;
+}
+.google-login-button {
+  font-size: 12px;
+}
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 14px;
 }

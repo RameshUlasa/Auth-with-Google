@@ -1,0 +1,33 @@
+.value {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000000;
+}
+.percentage {
+  color: var(--secondary-text, #858585);
+  font-size: 12px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+.items-card {
+  display: flex;
+  flex-direction: column;
+}
+.recharts-legend-item circle {
+  display: none;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
